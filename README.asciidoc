@@ -1,154 +1,47 @@
 = eXXcellent programming challenge
 
-This repository provides the project scaffold for a simple
-programming challenge. Though the challenge is very simple
-and a rather synthetic use-case, your results are a helpful
-starting point to discuss your programming flavor, skills
-and methodology.
+Dies ist meine Lösung zur Programming challenge
+von eXXcellent solutions
 
-**BEFORE STARTING:** Please take the time and read this 
-document completely and carefully! It describes important 
-parts of the challenge.
+Die Lösung beinhaltet ein generalisiertes Vorgehen
+zur Einbettung und Ausführung von Aufgaben über CLI-Argumente.
 
+== Installation
 
-== Goal
-
-Implement a solution for the given tasks which aims for
-
-* robustness & correctness
-* readability & maintainability
-* clean software design & architecture
-
-Be prepared to discuss your implementation and software design
-decisions. Show us how you would solve the task when working on your day-to-day 
-job.
-
-Feel free to come up with own ideas & solutions. There is no plain
-"right" or "wrong". Instead, we want to talk to you
-about _how_ you achieved your goal and about your thoughts and design
-idea and process.
-
-
-
-== Tasks
-
-=== Time estimation
-Between ~1.5 hour up to ~4 hours,  +
-depending on your previous experience & development environment.
-
-=== Task
-
-Weather::
-    In `weather.csv` you’ll find the daily weather data of a single month.
-    Read the file, then output the day number (column one `Day`) of the day with
-    the smallest temperature spread (difference between maximum &
-    minimum temperature of the day.)
-    The maximum temperature is the second column `MxT`, the minimum
-    temperature the third column `MnT`.
-
-Football::
-    The `football.csv` file contains results of the
-    English Premier League. The columns labeled ‘Goals’
-    and ‘Goals Allowed’ contain the total number of goals scored
-    by and against each team (so Arsenal scored
-    79 goals themselves and had 36 goals scored against them).
-    Read the file, then print the name of the team with the smallest
-    distance (absolute difference) between ‘Goals’ and ‘Goals Allowed’.
-
-Task::
-    1. Try to write a single program, which is able to solve the "Weather" 
-       challenge. 
-    2. Then try to refactor & extend your solution, that it additionally
-       supports the Football challenge. 
-
-Process::
-* Favour the software design goals described under _Goal_ over other goals 
-  like _performance_ or _feature set_.
-* Try to follow a test-driven development approach.
-
-
-=== Hints
-
-Your solution should focus on **maintainability**, **reusability** and
-**readability**. Here are some hints on how you may achieve these goals:
-
-1. The most important aspect is **separation of concerns**. Think about
-   the different concerns involved in the task and how they may need to
-   change in the future. For example: one concern is reading the file.
-   What others components can you think of? Try to design separate,
-   concise software components for each concern.
-
-2. Often a quick diagram illustrating the components and their interactions
-   can be helpful. If you draw a diagram, feel free to include it in your
-   solution.
-
-3. Design **intuitive interfaces** for the components in a way that each
-   component can be replaced. For example in the next evolution step
-   of your solution you might need to support other data formats like
-   JSON files or even Web services. The Reader for the CSV-files in your
-   example could be replaced with a reader that implements the same
-   interface but reads JSON-files.
-
-4. Use **meaningful names** for classes, properties and methods. By
-   reading the name, one should already have an idea of what something
-   does.
-
-5. Document your development by **small, frequent git commits that address
-   a specific matter** each (e.g a feature). Try to make the commit messages
-   as expressive as possible, so a reader knows what a commit does.
-
-== Getting started
-
-=== Getting a copy
-The starting point for every challenge is provided as a branch in a Gitlab.com/GitHub
-hosted Git repository. Be careful to adjust the URLs below
-accordingly.
-
-To start
-
-=== Fork or directly clone the repository
-
+Zum Klonen des Projektes nutzen Sie den folgenden Befehl:
 ```
-git clone https://[gitlab|github].com/exxcellent/programming-challenge.git
-```
-or if you've forked the repository then
-```
-git clone git@[gitlab|github].com:YOURNAME/programming-challenge.git
+git clone https://github.com/RavellHeerdegen/ExxcellentSolutions.git
 ```
 
-See what challenges are available by listing the branches present:
-```
-git branch -a
-```
+== Builden und Ausführen
 
-=== Switch to the branch of the challenge assigned
-```
-cd programming-challenge
-git checkout challenge-CHALLENGENAME
-```
+Die Lösung setzt voraus, dass alle notwendigen Argumente über das CLI übergeben werden.
+Dadurch sind zukünftige Aufgaben leichter umsetzbar und das Programm gut erweiterbar.
 
-=== Building and running
-The project scaffolds provides a Maven `pom.xml` as starting
-point. You should be able to start with any IDE or text editor
-you are convenient with.
+Insgesamt müssen vier Argumente übergeben werden:
+*1. Der Dateiname der Datei, die gelesen werden soll (inkl. Dateiendung)* -> Das Programm sucht nach Dateien im Pfad resources/de/exxcellent/files
+*2. Die Aufgabe in Kleinbuchstaben und durch `&`-Zeichen gebündelt*
+*3. Die Felder zur Berechnung in Kleinbuchstaben und durch `&`-Zeichen gebündelt*
+*4. Der Name des Ergebnisfeldes, wessen Wert nach der Berechnung zurückgegeben wird*
 
-After installing Maven 3.x you should be able to
+Um das Maven Projekt zu initialisieren, 
+laden Sie das Projekt in einer IDE Ihrer Wahl und führen Sie folgende Befehle aus:
 
-Build & test your project::
+Builden & testen des Projektes::
     `mvn verify`
 
-Then to run the main class _de.exxcellent.challenge.App_::
-    `mvn exec:java`
+Um die main-Klasse _de.exxcellent.challenge.App_ für die Aufgabe "Weather" auszuführen::
+    `mvn exec:java -Dexec.args="'weather.csv' 'smallest&diff' 'MnT&MxT' 'Day'"`
+    
+Um die main-Klasse _de.exxcellent.challenge.App_ für die Aufgabe "Football" auszuführen::
+    `mvn exec:java -Dexec.args="'football.csv' 'smallest&diff' 'Goals&Goals Allowed' 'Team'"`
 
-To remove the compilation output::
+Um den Kompilierungsoutput zu löschen::
     `mvn clean`
 
-Or use your IDE functionality::
-    to run & debug you program.
+Oder nutzen Sie Ihre eigenen IDE Funktionalitäten, um das Projekt zu builden, testen und zu starten.
 
-== Submitting your results
+== Infos zur Lösung
 
-Ideally you provide your solutions as Git repository with
-appropriate commits and descriptions. If you have a GitLab.com
-or GitHub account, please feel free to publish your solution
-there.
+Der main-Code ist bildlich im unten aufgeführten Flussdiagramm einsehbar.
+
