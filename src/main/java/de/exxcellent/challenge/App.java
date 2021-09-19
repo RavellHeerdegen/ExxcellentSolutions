@@ -1,63 +1,57 @@
 package de.exxcellent.challenge;
 
+import Classes.DataMaster;
+import Classes.TaskExecuter;
+import Interfaces.IReader;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * The entry class for your solution. This class is only aimed as starting point and not intended as baseline for your software
  * design. Read: create your own classes and packages as appropriate.
  *
  * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
  */
-public final class App {
+public final class App
+{
 
     /**
      * This is the main entry method of your program.
      * @param args The CLI arguments passed
      */
-    public static void main(String... args) {
+    public static void main(String... args)
+    {
+        // Check length of arguments
+        if(args.length == 4)
+        {
+            System.out.println("Arguments okay");
 
-        // Your preparation code …
+            // Process given  arguments
+            DataMaster dataMaster = new DataMaster();
+            dataMaster.processArgs(args[0], args[1], args[2]);
 
-        // Beispielaufruf des Programmes:
-        // mvn exec:java "weatherdata.csv" "smallest&diff" "MnT","MxT" "Day"
+            if (dataMaster.getReaderTypeIsValid())
+            {
+                // Create Reader-Class
+                IReader reader = (IReader) dataMaster.loadReaderClass();
+                if (reader != null)
+                {
+                    // Read file and save it correctly
+                    HashMap<String, ArrayList<String>> data = reader.readFile(args[0]);
 
-        // Hol dir den Dateinamen wo die Daten rausgelesen werden sollen
-        // String file_name = args[1];
+                    // Create Executer-Class to solve the task
+                    TaskExecuter executer = new TaskExecuter(data, dataMaster.getTaskDescriptions(), dataMaster.getCalcFields(), args[3]);
 
-        // Hole Typnamen für Readerklasse
-        // String reader_type = file_name.split(".")[1]; // Dateinamen haben nur einen "." im Namen
-
-        // Welche Aufgabe soll erledigt werden
-        // String task_name = args[2];
-
-        // Um welche Felder geht es zur Berechnung
-        // String[] calcfield_names = args[3];
-
-        // Um welches Feld geht es als Ergebnis
-        // String result_field = args[4];
-
-        // Erzeuge ein Key/Value Mapping für alle Felder/Werte
-        // Map<Key,Value> data = new Map<Key,Value>();
-
-        // Erstelle Executer-Klasse zur Erledigung der Aufgabe
-        // TaskExecuter executer = new TaskExecuter();
-
-        // ----------------------------------------------------
-
-        // Erzeuge Reader-Klasse
-        // Class reader_Class = Class.loadDynamicType(reader_type, Constructor());
-        // CSVReader reader = reader_Class.initialize();
-
-        // Lese Datei ein
-        // data = reader.readFile(file_name);
-
-        // Bewältige Aufgabe und gebe Ergebnis zurück
-        // int dayWithSmallestTempSpread = executer.getResultOf(task_name, calcfield_names, result_field, data);
-
-        //
-
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
-        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
-
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+                    // Execute task and give back the result
+                    String result = executer.executeTask();
+                    System.out.println("Result of task" + args[1] + " with fields " + args[2] + " ending in " + args[3] + " is: " + result);
+                }
+            }
+        }
+        else
+        {
+            System.err.println("Count of arguments not met -> " + args.length + " received (4 needed)");
+        }
     }
 }
