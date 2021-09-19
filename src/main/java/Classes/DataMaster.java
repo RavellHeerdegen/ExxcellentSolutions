@@ -73,7 +73,7 @@ public class DataMaster
             ClassLoader cloader = this.getClass().getClassLoader();
 
             Class readerClass = cloader.loadClass("Classes."+getReaderType()+"Reader");
-            System.out.println(readerClass.getName() + " Class got loaded successfully");
+            System.out.println(readerClass.getSimpleName() + " Class got loaded successfully");
 
             Constructor constructor = readerClass.getConstructor();
             Object readerObject = constructor.newInstance();

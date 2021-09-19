@@ -15,7 +15,6 @@ import java.util.HashMap;
  */
 public final class App
 {
-
     /**
      * This is the main entry method of your program.
      * @param args The CLI arguments passed
@@ -45,13 +44,10 @@ public final class App
 
                     // Execute task and give back the result
                     String result = executer.executeTask();
-                    System.out.println("Result of task" + args[1] + " with fields " + args[2] + " ending in " + args[3] + " is: " + result);
+                    System.out.println("Result of task " + args[1] + " with fields " + args[2] + " ending in " + args[3] + " is: " + result);
                 }
             }
         }
-        else
-        {
-            System.err.println("Count of arguments not met -> " + args.length + " received (4 needed)");
-        }
+        else { System.err.println("Count of arguments not met -> " + args.length + " received (4 needed)"); }
     }
 }

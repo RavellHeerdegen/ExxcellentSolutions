@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="de.exxcellent.challenge.AppTest" time="0.077" tests="2" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="de.exxcellent.challenge.AppTest" time="0.128" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="DE"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17\bin"/>
-    <property name="sun.java.command" value="C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire16714899523116668055\surefirebooter10718495806756344067.jar C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire16714899523116668055 2021-09-18T13-34-25_292-jvmRun1 surefire6899923271023792742tmp surefire_014679532927906108444tmp"/>
+    <property name="sun.java.command" value="C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire8917595317501416011\surefirebooter17180617347184448641.jar C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire8917595317501416011 2021-09-19T14-06-38_823-jvmRun1 surefire3559296986808114735tmp surefire_06198857467479541189tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\RavellHeerdegen\Documents\IntelliJProjects\programming-challenge\target\test-classes;C:\Users\RavellHeerdegen\Documents\IntelliJProjects\programming-challenge\target\classes;C:\Users\RavellHeerdegen\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.8.0-M1\junit-jupiter-engine-5.8.0-M1.jar;C:\Users\RavellHeerdegen\.m2\repository\org\apiguardian\apiguardian-api\1.1.1\apiguardian-api-1.1.1.jar;C:\Users\RavellHeerdegen\.m2\repository\org\junit\platform\junit-platform-engine\1.8.0-M1\junit-platform-engine-1.8.0-M1.jar;C:\Users\RavellHeerdegen\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\RavellHeerdegen\.m2\repository\org\junit\platform\junit-platform-commons\1.8.0-M1\junit-platform-commons-1.8.0-M1.jar;C:\Users\RavellHeerdegen\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.8.0-M1\junit-jupiter-api-5.8.0-M1.jar;C:\Users\RavellHeerdegen\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.4.20\kotlin-stdlib-jdk8-1.4.20.jar;C:\Users\RavellHeerdegen\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.4.20\kotlin-stdlib-1.4.20.jar;C:\Users\RavellHeerdegen\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.4.20\kotlin-stdlib-common-1.4.20.jar;C:\Users\RavellHeerdegen\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar;C:\Users\RavellHeerdegen\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.4.20\kotlin-stdlib-jdk7-1.4.20.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire16714899523116668055\surefirebooter10718495806756344067.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\RavellHeerdegen\AppData\Local\Temp\surefire8917595317501416011\surefirebooter17180617347184448641.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17+35-LTS-2724"/>
@@ -56,11 +56,21 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="argsTest" classname="de.exxcellent.challenge.AppTest" time="0.042">
-    <system-out><![CDATA[weatherdata.csv
-Day with smallest temperature spread : Someday
-Team with smallest goal spread       : A good team
+  <testcase name="FileDataIsNotCorruptTest" classname="de.exxcellent.challenge.AppTest" time="0.03"/>
+  <testcase name="FileNameIsOkayTest" classname="de.exxcellent.challenge.AppTest" time="0.006"/>
+  <testcase name="FileNameIsCorruptTest" classname="de.exxcellent.challenge.AppTest" time="0.002"/>
+  <testcase name="EnoughArgsTest" classname="de.exxcellent.challenge.AppTest" time="0.05">
+    <system-out><![CDATA[Arguments okay
+Filetype is okay
+Classes.CSVReader Class got loaded successfully
+Result of tasksmallest&diff with fields MnT&MxT ending in Day is: 14
 ]]></system-out>
   </testcase>
-  <testcase name="aPointlessTest" classname="de.exxcellent.challenge.AppTest" time="0.007"/>
+  <testcase name="NotEnoughArgsTest" classname="de.exxcellent.challenge.AppTest" time="0.005">
+    <system-err><![CDATA[Count of arguments not met -> 1 received (4 needed)
+]]></system-err>
+  </testcase>
+  <testcase name="FileTypeIsNotAllowedTest" classname="de.exxcellent.challenge.AppTest" time="0.001"/>
+  <testcase name="ArgumentsIncludeFalseCharactersTest" classname="de.exxcellent.challenge.AppTest" time="0.001"/>
+  <testcase name="FileTypeIsAllowedTest" classname="de.exxcellent.challenge.AppTest" time="0.001"/>
 </testsuite>

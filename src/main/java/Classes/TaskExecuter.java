@@ -97,7 +97,6 @@ public class TaskExecuter
             default:
                 System.err.println("Unidentifiable task name");
         }
-
         return "-1";
     }
 
@@ -153,6 +152,14 @@ public class TaskExecuter
     {
         return "";
     }
+
+    /*
+    private String greatestDiff() {}
+
+    private String greatestValue() {}
+
+    private String averageValue() {}
+     */
 
     //endregion
 
