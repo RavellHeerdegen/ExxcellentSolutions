@@ -49,6 +49,8 @@ Oder nutzen Sie Ihre eigenen IDE Funktionalitäten, um das Projekt zu builden, t
 
 ## Infos zur Lösung
 
-Der main-Code ist bildlich im unten aufgeführten Flussdiagramm einsehbar.
+Der main-Code ist bildlich im unten aufgeführten Flussdiagramm und Systemdiagramm einsehbar.
 
 ![](src/main/resources/de/exxcellent/files/Flussdiagramm.png)
+
+![](src/main/resources/de/exxcellent/files/Systemdiagramm.png)
