@@ -18,11 +18,11 @@ git clone https://github.com/RavellHeerdegen/ExxcellentSolutions.git
 Die Lösung setzt voraus, dass alle notwendigen Argumente über das CLI übergeben werden.
 Dadurch sind zukünftige Aufgaben leichter umsetzbar und das Programm gut erweiterbar.
 
-Insgesamt müssen vier Argumente übergeben werden:
-*1. Der Dateiname der Datei, die gelesen werden soll (inkl. Dateiendung)* -> Das Programm sucht nach Dateien im Pfad resources/de/exxcellent/files
-*2. Die Aufgabe in Kleinbuchstaben und durch `&`-Zeichen gebündelt*
-*3. Die Felder zur Berechnung in Kleinbuchstaben und durch `&`-Zeichen gebündelt*
-*4. Der Name des Ergebnisfeldes, wessen Wert nach der Berechnung zurückgegeben wird*
+Insgesamt müssen vier Argumente übergeben werden::
+    1. Der Dateiname der Datei, die gelesen werden soll (inkl. Dateiendung) -> Das Programm sucht nach Dateien im Pfad resources/de/exxcellent/files
+    2. Die Aufgabe in Kleinbuchstaben und durch `&`-Zeichen gebündelt
+    3. Die Felder zur Berechnung in Kleinbuchstaben und durch `&`-Zeichen gebündelt
+    4. Der Name des Ergebnisfeldes, wessen Wert nach der Berechnung zurückgegeben wird
 
 Um das Maven Projekt zu initialisieren, 
 laden Sie das Projekt in einer IDE Ihrer Wahl und führen Sie folgende Befehle aus:
