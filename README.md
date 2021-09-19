@@ -3,7 +3,7 @@
 Dies ist meine Lösung zur Programming challenge
 von eXXcellent solutions
 
-Die Lösung beinhaltet ein generalisiertes Vorgehen
+Die Lösung beinhaltet ein generalisiertes Vorgehen nach dem Factory-Pattern
 zur Einbettung und Ausführung von Aufgaben über CLI-Argumente.
 
 ## Installation
