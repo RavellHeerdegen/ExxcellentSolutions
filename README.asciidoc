@@ -44,4 +44,4 @@ Oder nutzen Sie Ihre eigenen IDE Funktionalitäten, um das Projekt zu builden, t
 == Infos zur Lösung
 
 Der main-Code ist bildlich im unten aufgeführten Flussdiagramm einsehbar.
-![Alt text](./src/main/resources/de/exxcellent/files/Flussdiagramm.png?raw=true "Flussdiagramm der Lösung")
+![alt text](https://github.com/RavellHeerdegen/ExxcellentSolutions/src/main/resources/de/exxcellent/files/Flussdiagramm.png?raw=true)
