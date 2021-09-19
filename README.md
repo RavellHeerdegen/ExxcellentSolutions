@@ -45,4 +45,4 @@ Oder nutzen Sie Ihre eigenen IDE Funktionalitäten, um das Projekt zu builden, t
 
 Der main-Code ist bildlich im unten aufgeführten Flussdiagramm einsehbar.
 
-![Alt Text](src/main/resources/de/exxcellent/files/Flussdiagramm.png)
+![](src/main/resources/de/exxcellent/files/Flussdiagramm.png)
